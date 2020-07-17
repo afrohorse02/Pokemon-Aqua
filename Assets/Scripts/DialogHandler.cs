@@ -11,7 +11,7 @@ public class DialogHandler : MonoBehaviour
     public Dialog currentDialog; // text
     public Text textt; //temp
     public GameObject overlay; //temp
-    int initialLineLimit = 50;
+    int initialLineLimit = 50; //fix text
 
     // Start is called before the first frame update
     void Start()

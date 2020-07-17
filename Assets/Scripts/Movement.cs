@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
         if (grass)
         {
             GameObject tempEffect = Instantiate(grassEffect, targetPosition, Quaternion.Euler(0, 0, 0));
-            Destroy(tempEffect, 0.4f);
+            Destroy(tempEffect, 0.4f);  //particle effect instead of instantiating
         }
         //if (grass) StartCoroutine(encounterChance);
         yield return 0;

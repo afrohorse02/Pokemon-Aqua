@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public Transform playerTransform;
 
-    public LayerMask pathMask;
+    public LayerMask pathMask; //possibly use tags instead of layermask (limitation)
     public LayerMask blockMask;
     public LayerMask grassMask;
     public LayerMask npcMask;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Z))
         {
             SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync("Battle");
         }
+        */
 
         xAxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if (!playerMovement.isMoving && inputDirection != Vector2.zero)
         {
             playerMovement.changeFacing(inputDirection);
+            //avoid using multiple if statements
             if (playerMovement.CheckCollision(inputDirection, pathMask) && !playerMovement.CheckCollision(inputDirection, blockMask))
             {
                 walkingOnGrass = false;
@@ -71,14 +74,5 @@ public class PlayerController : MonoBehaviour
             }
         }
         inputDirection = Vector2.zero;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Grass"))
-        {
-            
-            //ENCOUNTER CHANCE
-        }
     }
 }
