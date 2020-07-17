@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 99b6a140b9740604cbca302f417cdf38
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Power Green
+  fontNames:
+  - Power Green
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5da5fae16761e8644b1d55b573ad9688, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

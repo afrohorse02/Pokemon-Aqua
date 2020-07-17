@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: d9358cc267b2c3d4d86387303961b299
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5069836027660154162
+    second: grassanddustparticles_0
+  - first:
+      213: 590144923238211645
+    second: grassanddustparticles_1
+  - first:
+      213: -7332002511615186953
+    second: grassanddustparticles_2
+  - first:
+      213: 79223563836030047
+    second: grassanddustparticles_3
+  - first:
+      213: 1244388602500251503
+    second: grassanddustparticles_4
+  - first:
+      213: -3154801791080499849
+    second: grassanddustparticles_5
+  - first:
+      213: -9203953978944618760
+    second: grassanddustparticles_6
+  - first:
+      213: -180501796725497525
+    second: grassanddustparticles_7
+  - first:
+      213: 2963693259329250933
+    second: grassanddustparticles_8
+  - first:
+      213: 4627866603407101934
+    second: grassanddustparticles_9
+  - first:
+      213: -7440237572088824380
+    second: grassanddustparticles_10
+  - first:
+      213: -3356195757685063618
+    second: grassanddustparticles_11
+  - first:
+      213: 622774869968098589
+    second: grassanddustparticles_12
+  - first:
+      213: -1791552539895553472
+    second: grassanddustparticles_13
+  - first:
+      213: 7171394274139068614
+    second: grassanddustparticles_14
+  - first:
+      213: 881548105436125046
+    second: grassanddustparticles_15
+  - first:
+      213: 1847275281131318409
+    second: grassanddustparticles_16
+  - first:
+      213: -2086826073041308563
+    second: grassanddustparticles_17
+  - first:
+      213: -5895893429526794943
+    second: grassanddustparticles_18
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: grassanddustparticles_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 848
+        width: 20
+        height: 10
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235392a810dab5640800000000000000
+      internalID: 5069836027660154162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grassanddustparticles_1
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 850
+        width: 28
+        height: 8
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d302d935ead903800800000000000000
+      internalID: 590144923238211645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grassanddustparticles_2
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 858
+        width: 28
+        height: 18
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7a7e2ff8e7f3a90800000000000000
+      internalID: -7332002511615186953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grassanddustparticles_3
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 662
+        width: 28
+        height: 16
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c794c5965791100800000000000000
+      internalID: 79223563836030047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grassanddustparticles_4
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 661
+        width: 22
+        height: 15
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6f729647d4f44110800000000000000
+      internalID: 1244388602500251503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
