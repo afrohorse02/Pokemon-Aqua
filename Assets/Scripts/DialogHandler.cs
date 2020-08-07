@@ -22,10 +22,7 @@ public class DialogHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(currentDialog.DialogSequence(textt, overlay, 3));
-        }
+
     }
 
 

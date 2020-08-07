@@ -8,46 +8,44 @@ public class PlayerController : MonoBehaviour
 {
     public Transform playerTransform;
 
-    public LayerMask pathMask; //possibly use tags instead of layermask (limitation)
-    public LayerMask blockMask;
-    public LayerMask grassMask;
+    public LayerMask pathMask;
     public LayerMask npcMask;
 
     float xAxis;
     float yAxis;
-    bool walkingOnGrass = false;
     public float moveSpeed = 5;
+    public float surfSpeed = 6;
+    public float runSpeed = 8;
     Vector2 inputDirection;
+    bool surfing;
+
+    Vector2 facingDirection;
+    
+    Vector2 
+        westFacing, northFacing, eastFacing, southFacing;
 
     public GameObject dialogOverlay;
 
     [HideInInspector] public Movement playerMovement;
     [HideInInspector] public DialogHandler dialogController;
+
+    TileClass tileOfType; //
+    TileClass npcInWay;
+
+    public PauseController pauseController;
     void Awake()
     {
-        int npc = 1 << LayerMask.NameToLayer("NPC");
-        int wall = 1 << LayerMask.NameToLayer("Wall");
-        blockMask = npc | wall;
         playerMovement = GetComponent<Movement>();
         dialogController = GetComponent<DialogHandler>();
+        westFacing = new Vector2(-1, 0);
+        northFacing = new Vector2(0, 1);
+        eastFacing = new Vector2(1, 0);
+        southFacing = new Vector2(0, -1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync("SampleScene");
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync("Battle");
-        }
-        */
-
         xAxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
         if (xAxis != 0 || yAxis != 0)
@@ -60,19 +58,74 @@ public class PlayerController : MonoBehaviour
         }
         if (!playerMovement.isMoving && inputDirection != Vector2.zero)
         {
-            playerMovement.changeFacing(inputDirection);
-            //avoid using multiple if statements
-            if (playerMovement.CheckCollision(inputDirection, pathMask) && !playerMovement.CheckCollision(inputDirection, blockMask))
+            playerMovement.ChangeFacing(inputDirection);
+            tileOfType = playerMovement.CheckCollision(inputDirection, pathMask);
+            npcInWay = playerMovement.CheckCollision(inputDirection, npcMask);
+            if (tileOfType != null && npcInWay == null)
             {
-                walkingOnGrass = false;
-                StartCoroutine(playerMovement.Move(inputDirection, moveSpeed, walkingOnGrass));
+                if (tileOfType.walkable)
+                {
+                    StartCoroutine(playerMovement.Move(inputDirection, moveSpeed));
+                    switch (tileOfType.type)
+                    {
+                        case TileClass.tileType.land:
+                            //Nothing
+                            break;
+                        case TileClass.tileType.grass:
+                            //Encounter
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
-            if (playerMovement.CheckCollision(inputDirection, grassMask) && !playerMovement.CheckCollision(inputDirection, blockMask))
+        }
+        if (Input.GetButtonDown("Action"))
+        {
+            string facing = playerMovement.GetFacing();
+            switch (facing)
             {
-                walkingOnGrass = true;
-                StartCoroutine(playerMovement.Move(inputDirection, moveSpeed, walkingOnGrass));
+                case "west":
+                    facingDirection = westFacing;
+                    break;
+                case "north":
+                    facingDirection = northFacing;
+                    break;
+                case "east":
+                    facingDirection = eastFacing;
+                    break;
+                case "south":
+                    facingDirection = southFacing;
+                    break;
+                default:
+                    facingDirection = northFacing; //default facing?
+                    break;
+            }
+            npcInWay = playerMovement.CheckCollision(facingDirection, npcMask);
+            if (npcInWay)
+            {
+                Interact(facingDirection);
             }
         }
         inputDirection = Vector2.zero;
+        if (Input.GetButtonDown("Cancel") && playerMovement.isMoving == false)
+        {
+            pauseController.ActivatePauseMenu();
+        }
+    }
+
+    void Interact(Vector2 direction)
+    {
+        Debug.Log("Start npc sequence");
+        Vector2 npcPosition = transform.position + (Vector3)direction;
+        NPC interactedNpc = GetNPCInfo(npcPosition);
+    }
+
+    NPC GetNPCInfo(Vector2 npcPosition)
+    {
+        NPC npcInfo;
+        RaycastHit2D collider = Physics2D.Raycast(npcPosition, Vector2.zero, 0.1f, npcMask);
+        npcInfo = collider.collider.gameObject.GetComponent<NPC>();
+        return npcInfo;
     }
 }

@@ -10,15 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Alakazam
+  m_Name: Shaymin
   m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
-  id: 65
-  pkName: Alakazam
+  id: 0
+  pkName: Default
   natDexNumber: 0
-  catchRate: 50
+  spriteFront: {fileID: 0}
+  spriteBack: {fileID: 0}
+  icon: {fileID: 0}
+  spriteFrontS: {fileID: 0}
+  spriteBackS: {fileID: 0}
+  iconS: {fileID: 0}
+  catchRate: 80
   height: 1.5
   weight: 40
   baseExpYield: 100
   baseFriendship: 0
   levelRate: 1
   group: 0
+  primaryType: 0
+  secondaryType: 18
